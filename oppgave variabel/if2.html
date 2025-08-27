@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oppgave 2</title>
+</head>
+<body>
+    <p id ="utskrift"></p>
+    <script>
+
+        const alder = 22
+
+        let utskrift = "";
+
+        if (alder < 18){
+            utskrift = "Du er ikke myndig"
+        } else if ( alder >= 18 && alder <67){
+            utskrift = " Du er myndig og klar for arbeidslivet"
+        } else if (alder >= 67){
+            utskrift = "Du er pensjonsklar"
+        }
+
+        document.getElementById("utskrift").innerHTML = utskrift    
+    </script>
+</body>
+</html>
