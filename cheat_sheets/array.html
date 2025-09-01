@@ -6,31 +6,46 @@
     <title>Array</title>
 </head>
 <body>
+    <ul id="profiles"></ul>
     <script>
-        const handleliste = ["Middag", "Brød", "Melk", "Egg", "Bacon"]
-
-
-        const produkter = [
+        const lecturers = [
             {
-                id: 1,
-                name: "Pokemon",
-                year: 1995,
-
+                name: "Marius Akerbæk",
+                ofiice: "D1-016",
+                email: "toremake@hiof.no",
+                birtyear: 1983,
             },
             {
-                id: "2",
-                name: "Valheim",
-                Year: 2021,
+               name: "Daniella Blauhut",
+                ofiice: "D1-015",
+                email: "danielb@hiof.no",
+                birtyear: 1977,  
             },
             {
-                id: 3,
-                name: "Red dead redemption 2",
-                year: 2018,
-            }
+                name: "Ann-Charlott Karlsen",
+                ofiice: "D1-062",
+                email: "akarlse@hiof.no",
+                birtyear: 1992,
+            },
+            {
+                name: "Ola Edvard Ørebekk",
+                ofiice: "D1-061A",
+                email: "oledvo@hiof.no",
+                birtyear: 1993,
+            },
         ]
 
-        produkter.map((prod) =>  { 
-            console.log(prod.name)
+        const profiles = document.getElementById("profiles")
+
+        lecturers.map(lecturer => {
+            profiles.innerHTML += `
+            <li>
+                <h3>${lecturer.name}</h3>
+                <span>Alder: ${2025 - lecturer.birtyear}</span>
+                <p>Kontor: ${lecturer.ofiice}</p>
+                <a href="mailto:${lecturer.email}">Skriv e-post til ${lecturer.name}  
+                </li>`
+            console.log(lecturer)
         })
     </script>
 </body>

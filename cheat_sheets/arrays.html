@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays - Cheat sheets</title>
+</head>
+<body>
+    <h1>Arrayer og metoder</h1>
+    <p>Dette juksearket fungerer best med konsollen åpen</p>
+    <h3>Filmarray<span id="moviecount">0</span></h3>
+    <p>Film på index <span id="movieindex">#</span>: <span id="movietitle">Ingen film funnet</span></p>
+    <script>
+        const moviearray = ["Ringenes Herre", "Star wars episode 1: Phantom menace", "Titanic", "Nobody","John Wick 4", "Howls moving castle", "Look back","No country for old men", "Dont mess with zohan"]
+        
+       // moviearray.sort()
+
+        //moviearray.reverse()
+        moviearray.push("Tetris")
+        
+        moviearray.sort().reverse()
+
+        moviearray.splice(3,1)
+
+        const movieexists = moviearray.includes("Tetris")
+        console.log("Finnes Tetris?", movieexists)
+
+        console.log(moviearray)
+
+        document.getElementById("moviecount").innerHTML = moviearray.length
+        
+        const index = 4
+        document.getElementById("movieindex").innerHTML = index
+        document.getElementById("movietitle").innerHTML = moviearray[index]
+        
+        const numbersarray = [32, 31, 6, 4, 104, 111, 1000]
+
+        numbersarray.sort(function(a,b) {return a-b})
+
+        console.log(numbersarray)
+      
+    </script>
+</body>
+</html
