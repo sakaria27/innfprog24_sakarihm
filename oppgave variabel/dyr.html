@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Øvingsoppgave</title>
+</head>
+<body>
+    <p id="utskrift"></p>
+    <script>
+        
+        const dyr = ["Katt", "Hund", "Skilpade", "Hest", "Pinnsvin", "Påfugl", "Blåhval", "Slange", "Frosk","Pikachu"]
+
+        console.log(dyr)
+
+        const utskrift =`Her er det listet opp noen dyr, for ekspemel ${dyr[3]} og ${dyr[7]}`
+        
+        console.log(utskrift)
+
+        document.getElementById("utskrift").innerHTML = utskrift
+
+    </script>
+</body>
+</html>

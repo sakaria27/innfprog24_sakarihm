@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Øvingsoppgave 2</title>
+</head>
+<body>
+    <p id="setning"></p>
+    <script>
+        const dyr = ["Katt", "Hund", "Skilpade", "Hest", "Pinnsvin", "Påfugl", "Blåhval", "Slange", "Frosk","Pikachu"]
+
+        const animals = ["Cat", "Dog", "Turtle", "Horse", "Hegdehog", "Peacock", "Blue Whale", "Snake", "Frog", "Pikachu"]
+
+        const dyrIndex1 = 2
+        const dyrIndex2 = 7
+
+        const tekst = `${dyr[dyrIndex1]} er et dyr. Det heter ${animals[dyrIndex1]} på engelsk. ${dyr[dyrIndex2]} er også et dyr, som heter ${animals[dyrIndex2]} på engelsk.`
+
+        console.log(tekst)
+
+        document.getElementById("setning"). innerHTML = tekst
+    </script>
+</body>
+</html>

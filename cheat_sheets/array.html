@@ -50,7 +50,11 @@
                 <span>Alder: ${2025 - lecturer.birtyear}</span>
                 <p>Kontor: ${lecturer.ofiice}</p>
                 <a href="mailto:${lecturer.email}">Skriv e-post til ${lecturer.name}</a>
-                
+                <ul>
+                   ${lecturer.courses.map(course => {
+                       return `<li>${course}</li>`
+                   }). join(" ")}
+                    </ul>
                 </li>`
             console.log(lecturer)
         })
