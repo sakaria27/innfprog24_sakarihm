@@ -14,26 +14,32 @@
                 ofiice: "D1-016",
                 email: "toremake@hiof.no",
                 birtyear: 1983,
+                courses:["Innføring av programemering","Komunikasjonensdesign","UI Designsprojekt","Utvikling av interaktive nettsider"]
             },
             {
                name: "Daniella Blauhut",
                 ofiice: "D1-015",
                 email: "danielb@hiof.no",
-                birtyear: 1977,  
+                birtyear: 1977, 
+                courses:["Webutvikling", "Utvikling av interaktive nettsteder"] 
             },
             {
                 name: "Ann-Charlott Karlsen",
                 ofiice: "D1-062",
                 email: "akarlse@hiof.no",
                 birtyear: 1992,
+                courses:["Innføring i datasikkerhet"]
             },
             {
                 name: "Ola Edvard Ørebekk",
                 ofiice: "D1-061A",
                 email: "oledvo@hiof.no",
                 birtyear: 1993,
+                courses:["Innføring av progammering"]
             },
         ]
+
+        console.log(lecturers)
 
         const profiles = document.getElementById("profiles")
 
@@ -43,7 +49,8 @@
                 <h3>${lecturer.name}</h3>
                 <span>Alder: ${2025 - lecturer.birtyear}</span>
                 <p>Kontor: ${lecturer.ofiice}</p>
-                <a href="mailto:${lecturer.email}">Skriv e-post til ${lecturer.name}  
+                <a href="mailto:${lecturer.email}">Skriv e-post til ${lecturer.name}</a>
+                
                 </li>`
             console.log(lecturer)
         })
