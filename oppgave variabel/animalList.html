@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Løkker Øvingsoppgave 3</title>
+</head>
+<body>
+    <ul id="animals"></ul>
+    <script>
+         const animals = ["Hest", "Katt", "Hund", "Sau", "Ekorn", "Unicorn", "Rotte", "Panda", "Rev"]
+
+         let htmlString =""
+
+         for(let counter = 0; counter < animals.length; counter++) {
+            
+            htmlString += `<li>${animals[counter]}</li>`
+        }
+
+        
+        document.getElementById("animals").innerHTML = htmlString
+
+    </script>
+</body>
+</html>
