@@ -34,8 +34,8 @@
             <a href="https://www.flaticon.com/free-icons/user" title="female icons">User icons created by Prosymbols Premium, Freepik, Smashicons, and Vectors Market - found at Flaticon</a>
         </p>
     </footer>
-
-    <scripttt>
+      <!----> scripttt var feil, det er script <!---->
+    <script>
         //Variabel with company name
         const company = "Programmeriet"
 
@@ -45,9 +45,9 @@
             {name: "Jens Jensen", position: "Programmerer", email: "jens.jensen@email.com", office: "323", image: "man2"},
             {name: "Trine Trinesdotter", position: "Programmerer", email: "trine.trinesdotter@email.com", office: "304", image: "woman"},
         ]
-
+        // glemte "" på img
         //Secret keys to access url and images
-        let images_folder = "img
+        let images_folder = "img"
         let secret_key = 0
         let ak_key
         
@@ -59,7 +59,7 @@
             ak_key = secret_key + 1
         }
         const safe_images_folder = images_folder += ak_key
-        console.logg("Image folder: " + safe_images_folder)
+        console.log("Image folder: " + safe_images_folder)
 
         let HTML_employees = ""
 
