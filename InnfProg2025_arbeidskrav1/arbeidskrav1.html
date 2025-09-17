@@ -34,8 +34,9 @@
             <a href="https://www.flaticon.com/free-icons/user" title="female icons">User icons created by Prosymbols Premium, Freepik, Smashicons, and Vectors Market - found at Flaticon</a>
         </p>
     </footer>
-      <!----> scripttt var feil, det er script <!---->
+
     <script>
+        //scripttt  feil, det er script 
         //Variabel with company name
         const company = "Programmeriet"
 
@@ -51,14 +52,15 @@
         let secret_key = 0
         let ak_key
         
+        //const safeguard = false kjører aldri employees.map. Derfor vises ingen ansatte i html
         //Turn on or off safeguard to allow system to run
-        const safeguard = false
+        const safeguard = true
         
         //Control of safeguard to create image folder name
         if(safeguard === true) {
             ak_key = secret_key + 1
         }
-        const safe_images_folder = images_folder += ak_key
+        const safe_images_folder = images_folder += (ak_key ?? "")
         console.log("Image folder: " + safe_images_folder)
 
         let HTML_employees = ""
@@ -71,8 +73,8 @@
                     <p>${e.position} | Kontor: ${e.office}</p>
                     <p>${e.email}</p>
                 </article>`)
-
-                document.getElementbyId("employee_list").innerHTML = HTML_employeeees
+                //HTML_employeeees er feilen, det er HTML_employees
+                document.getElementById("employee_list").innerHTML = HTML_employees
         }
 
         //System prints

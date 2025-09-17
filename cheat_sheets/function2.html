@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log("test")
+        const users = [
+            {
+                name: "Thor",
+                username: "thoraho",
+                email: "thoraho@hiof.no",
+                password: "drossap"
+            },
+             {
+                name: "Tore marius Akerbæk",
+                username: "toremake",
+                email: "toremake@hiof.no",
+                password: "akerbak"
+            },
+             {
+                name: "Ann-Charlott Karslen",
+                username: "ackarlse",
+                email: "ackarlse@hiof.no",
+                password: "jegElskerDiv"
+            }
+        ]
+
+        function verifyUser(email, password){
+            const filteredUser = users.filter(user => user.email === email && user.password === password)
+            
+            if(filteredUser[0]){
+                console.log("Logget in som" + filteredUser[0].name)
+            } else{
+                alert("Feil passord eller e-post")
+            }
+
+            
+        }
+
+        verifyUser("ackarlse@hiof.no", "jegHaterDiv")
+    </script>
+</body>
+</html>

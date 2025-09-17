@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Sakria Hussein Mohamed. E-post: <span id="emailcontainer"></span></p>
+    <script>
+
+        function myFirstFunction(){
+            console.log("Dette er min første funksjon")
+        }
+        
+       myFirstFunction()
+
+       function printName(name){
+           console.log(`Mitt navn er ${name}`)
+       }
+
+       printName("Sakaria")
+
+       function printNameAndAge(name,age){
+        console.log(`Mitt navn er ${name}, og jeg er ${age} år gammel`)
+       }
+
+       printNameAndAge("Sakaria",22)
+
+       function printDefualtName(name ="Navn"){
+        console.log(name)
+       }
+    
+       printDefualtName()
+
+       function createEmailLink(email){
+          if(!email){
+            return "Ikke Oppgitt"
+          }
+          return `<a href="mailto:${email}">${email}</a>`
+       }
+
+       console.log(createEmailLink("Sakarih@hiof.no"))
+       document.getElementById("emailcontainer").innerHTML = createEmailLink("Sakarih@hiof.no")
+
+
+       function AgeCalculator(birthYear ="1983", year = "2025"){
+           const age = year - birthYear
+           const date = new Date().getFullYear()
+
+           console.log(age)
+           let text = ""
+           if(year > date){
+            text = `I ${year} vil du være ${age} år gammel`
+            console.log(text)
+           } else if(year < date){
+            if(age < 0){
+                text = `I ${year} er det${Math.abs(age)} år til du blir født i ${birthYear}`
+            } else{
+                text = `I ${year} var du ${age} år gammel`
+            }
+           }
+           console.log(text)
+       }
+
+       const users =[
+        {
+            name: "Jostein",
+            birthYear: "1977"
+        },
+        {
+            name:"Amanda",
+            birthYear: 2001
+        }
+       ]
+
+       /AgeCalculator()
+
+       function randomMinMax(a,b){
+         return Math.floor(Math.random() * (b - a + 1)+ a)
+       }
+    
+    </script>
+</body>
+</html>
