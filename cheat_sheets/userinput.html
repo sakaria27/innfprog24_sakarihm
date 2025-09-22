@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brukerinput</title>
+</head>
+<body>
+    <button onClick="printMessage(2025)">Try me</button>
+    <button id="printEventMesaage">Trigger event</button>
+    
+        <label for="name">
+            Name:
+            <input type="text" id="name">
+        </label>
+        <button id="submitform">Submit</button>
+    
+    <script>
+        function printMessage(year){
+            console.log("Hei, verden, året er " + year)
+        }
+
+        function printEventMessage(){
+            console.log("Hei,verden; igjen")
+        }
+
+        const eventBtn = document.getElementById("printEventMessagge")
+        
+        eventBtn.addEventListener("click", () => {
+            printEventMessage()
+        })
+
+        function getUserInput(){
+            let getUsername = document.getElementById("name")
+            //console.log(getUsername.value)
+            
+            userArray.push(getUsername.value)
+
+            console.log(userArray)
+
+            getUsername.value = ""
+        }
+
+        const userArray = []
+
+        const submitform = document.getElementById("submitform")
+
+        submitform.addEventListener("click", () =>{
+            getUserInput()
+        })
+      
+    </script>
+</body>
+</html>

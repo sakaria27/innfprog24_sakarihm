@@ -52,7 +52,7 @@
         let secret_key = 0
         let ak_key
         
-        //const safeguard = false kjører aldri employees.map. Derfor vises ingen ansatte i html
+        //const safeguard = false er feil, det skal stå true
         //Turn on or off safeguard to allow system to run
         const safeguard = true
         
@@ -60,7 +60,8 @@
         if(safeguard === true) {
             ak_key = secret_key + 1
         }
-        const safe_images_folder = images_folder += (ak_key ?? "")
+        //console.log var feil med en ekstra g
+        const safe_images_folder = images_folder += ak_key 
         console.log("Image folder: " + safe_images_folder)
 
         let HTML_employees = ""
@@ -73,7 +74,7 @@
                     <p>${e.position} | Kontor: ${e.office}</p>
                     <p>${e.email}</p>
                 </article>`)
-                //Stringen HTML_employeeees var skrevet med tre ekstra E
+                //Stringen HTML_employeeees var skrevet med tre ekstra E og getElmentById var feil B var for liten
                 document.getElementById("employee_list").innerHTML = HTML_employees
         }
 
