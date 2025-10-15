@@ -16,23 +16,53 @@
     <p>Finnes ordet "problemløsning" i Programmeringsord-arrayen? <span id="problemlosning_sjekk"></span></p>
     <h2>Problem 3</h2>
     <p>Gjennomsnittet av tallene i tall_array_en er <span id="avg_array_one"></span></p>
-    <p>Gjennomsnittet av tallene i tall_array_to er <span id="avg_array_one"></span></p>
+    <p>Gjennomsnittet av tallene i tall_array_to er <span id="avg_array_two"></span></p>
 
     <script>
         //PROBLEM 1
-        
+           const hexadecimal_characters = "ABCDEF1234567890"
+           const hexadecimal_characters_array = Array.from(hexadecimal_characters)
+           let random_color_code = "#"
         //AI-kode for å løse problem 1 her.
+          //PROBLEM 1
+            
+         // Lager 6 tilfeldige tegn
+            for (let i = 0; i < 6; i++) {
+            const randomIndex = Math.floor(Math.random() * hexadecimal_characters.length);
+             random_color_code += hexadecimal_characters[randomIndex];
+}
+
+        // Skriver ut resultatet i HTML
+             document.getElementById("random_color").innerText = random_color_code;
 
         //PROBLEM 2
         const programming_words = ["variabel","funksjon","array","objekt","loop","betingelse","klasse","rekursjon","algoritme","kompilator"]
 
         //AI-kode for å løse problem 2 her.
+          function sjekkOrd(ord) {
+            if (programming_words.includes(ord)) {
+            return "Ja";
+            } else {
+            return "Nei";
+            }
+}
 
+        // Skriver ut i HTML
+        document.getElementById("betingelse_sjekk").innerText = sjekkOrd("betingelse");
+        document.getElementById("algoritme_sjekk").innerText = sjekkOrd("algoritme");
+        document.getElementById("problemlosning_sjekk").innerText = sjekkOrd("problemløsning");
         //PROBLEM 3
         const tall_array_en = [9, 13, 5, 62, 11, 6, 28, 31, 17]
         const tall_array_to = [23, 76, 88, 13, 56, 90, 42]
 
         //AI-kode for å løse problem 3 her.
+        function finnGjennomsnitt(array) {
+        const sum = array.reduce((akk, tall) => akk + tall, 0);
+        return (sum / array.length).toFixed(2); // runder av til 2 desimaler
+}
+
+        document.getElementById("avg_array_one").innerText = finnGjennomsnitt(tall_array_en);
+        document.getElementById("avg_array_two").innerText = finnGjennomsnitt(tall_array_to);
     </script>
 </body>
 </html>
