@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rekursive funksjoner i JavaScript</title>
+</head>
+<body>
+    <h1>Rekursiv utskrift av tall</h1>
+    <ul id="numberList">
+        <li>Tall vil skrives ut her.</li>
+    </ul>
+
+    <script>
+         function numberSelector() {
+            const listElement = document.getElementById("numberList");
+            if (listElement.firstElementChild.textContent === "Tall vil skrives ut her.") {
+                listElement.innerHTML = "";
+            }
+
+            const tall = Math.floor(Math.random() * 9) + 1;
+            const li = document.createElement("li");
+            li.textContent = tall;
+            listElement.appendChild(li);
+
+            if (tall === 4 || tall === 7) {
+                return;
+            }
+
+            numberSelector();
+        }
+
+        numberSelector();
+    </script>
+</body>
+</html>

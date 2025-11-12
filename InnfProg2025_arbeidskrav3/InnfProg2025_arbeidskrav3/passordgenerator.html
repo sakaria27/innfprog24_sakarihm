@@ -7,9 +7,29 @@
 </head>
 <body>
     <h1>Passordgenerator</h1>
+    :</p>
+    <button id="lowercasebtn">Små bokstaver</button>
+    <button id="uppercasebtn">Store bokstaver</button>
+    <button id="bothbtn">begge</button>
+
+    <p>Velg type:</p>
+    <button id="numbtn">Tall</button>
+    <button id="nonumbtn">Ingen tall</button>
+
+    <p>Velg type:</p>
+    <button id="symbtn">Symbol</button>
+    <button id="nosymbtn">Uten symbol</button>
+
+    <hr>
+    <input type="number" name="0" id="passordLength"><p>velg konstruksjonen av passord</p>
+
+    <hr> 
+
+    <p>Velg typessordLength">
+    <button id="genbtn">Generer Passord</button>
     <!-- Felter for brukervalg her -->
 
-
+    
      <p>Ditt passord: <span id="generatedPassword"></span></p>
 
      <script>
@@ -18,9 +38,84 @@
         const numbers = "0123456789";
         const symbols = "!@#$%^&*()_+-=[]{}|;:',.<>?/`~";
 
+
+        let includeLowercase = false;
+        let includeUppercase = false;
+        let includeNumbers = false;
+        let includeSymbols = false;
+
+
+        document.getElementById("lowercasebtn").addEventListener("click", function() {
+        includeLowercase = true;
+        includeUppercase = false;
+        console.log("Små bokstaver aktivert");
+        });
+
+        document.getElementById("uppercasebtn").addEventListener("click", function() {
+        includeUppercase = true;
+        includeLowercase = false;
+        console.log("Store bokstaver aktivert");
+        });
+
+        document.getElementById("bothbtn").addEventListener("click", function() {
+        includeLowercase = true;
+        includeUppercase = true;
+        console.log("Begge bokstavtyper aktivert");
+        });
+
+        document.getElementById("numbtn").addEventListener("click", function() {
+        includeNumbers = true;
+        console.log("Tall inkludert");
+        });
+
+        document.getElementById("nonumbtn").addEventListener("click", function() {
+        includeNumbers = false;
+        console.log("Tall fjernet");
+        });
+
+        document.getElementById("symbtn").addEventListener("click", function() {
+        includeSymbols = true;
+        console.log("Symboler inkludert");
+        });
+
+        document.getElementById("nosymbtn").addEventListener("click", function() {
+        includeSymbols = false;
+        console.log("Symboler fjernet");
+        });
+
         function passwordgenerator(length, includeLowercase, includeUppercase, includeNumbers, includeSymbols) {
-            /* Din kode her */
+            let tegn = ""
+            
+            if (includeLowercase) {
+            tegn += lowercase;
+            }
+
+            if (includeUppercase) {
+            tegn += uppercase;
+            }
+
+            if (includeNumbers) {
+            tegn += numbers;
+            }
+
+            if (includeSymbols) {
+            tegn += symbols;
+            }
+
+
+            let passord = "";
+            for(let i = 0; i < length; i++) {
+                const random = Math.floor(Math.random()* tegn.length);
+                passord += tegn[random]
+            }
+            return passord;
         }
+
+    document.getElementById("genbtn").addEventListener("click", function() {
+    const length = parseInt(document.getElementById("passordLength").value);
+    const generated = passwordgenerator(length, includeLowercase, includeUppercase, includeNumbers, includeSymbols);
+    document.getElementById("generatedPassword").innerHTML = generated;
+  });
      </script>
 </body>
 </html>
