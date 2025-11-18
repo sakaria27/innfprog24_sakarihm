@@ -1,121 +1,103 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Passordgenerator</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Passordgenerator</title>
 </head>
 <body>
-    <h1>Passordgenerator</h1>
-    :</p>
-    <button id="lowercasebtn">Små bokstaver</button>
-    <button id="uppercasebtn">Store bokstaver</button>
-    <button id="bothbtn">begge</button>
+  <h1>Passordgenerator</h1>
 
-    <p>Velg type:</p>
-    <button id="numbtn">Tall</button>
-    <button id="nonumbtn">Ingen tall</button>
+  <p>Velg bokstavtype:</p>
+  <button id="smabokstaver">små bokstaver</button><br>
+  <button id="storebokstaver">store bokstaver</button><br>
+  <button id="beggebokstaver">begge</button>
 
-    <p>Velg type:</p>
-    <button id="symbtn">Symbol</button>
-    <button id="nosymbtn">Uten symbol</button>
+  <p>Vil du ha tall i passordet?</p>
+  <button id="tallJa">ja</button><br>
+  <button id="tallNei">nei</button>
 
-    <hr>
-    <input type="number" name="0" id="passordLength"><p>velg konstruksjonen av passord</p>
+  <p>Vil du ha symboler i passordet?</p>
+  <button id="symbolJa">ja</button><br>
+  <button id="symbolNei">nei</button>
 
-    <hr> 
+  <hr>
 
-    <p>Velg typessordLength">
-    <button id="genbtn">Generer Passord</button>
-    <!-- Felter for brukervalg her -->
+  <p>Lengde på passord:</p>
+  <input type="number" id="passordLengde" placeholder="skriv lengde">
 
-    
-     <p>Ditt passord: <span id="generatedPassword"></span></p>
+  <hr>
 
-     <script>
-        const lowercase = "abcdefghijklmnopqrstuvwxyz";
-        const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        const numbers = "0123456789";
-        const symbols = "!@#$%^&*()_+-=[]{}|;:',.<>?/`~";
+  <button id="genererBtn">Generer passord</button>
 
+  <p>Ditt passord: <span id="resultat"></span></p>
 
-        let includeLowercase = false;
-        let includeUppercase = false;
-        let includeNumbers = false;
-        let includeSymbols = false;
+  <script>
+    const tegnsett = {
+      sma: "abcdefghijklmnopqrstuvwxyz",
+      store: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+      tall: "0123456789",
+      symboler: "!@#$%^&*()_+-=[]{}|;:',.<>?/`~"
+    };
 
+    let valg = {
+      sma: false,
+      store: false,
+      tall: false,
+      symboler: false
+    };
 
-        document.getElementById("lowercasebtn").addEventListener("click", function() {
-        includeLowercase = true;
-        includeUppercase = false;
-        console.log("Små bokstaver aktivert");
-        });
+    // Bokstavvalg
+    document.getElementById("smabokstaver").onclick = () => {
+      valg.sma = true;
+      valg.store = false;
+    };
 
-        document.getElementById("uppercasebtn").addEventListener("click", function() {
-        includeUppercase = true;
-        includeLowercase = false;
-        console.log("Store bokstaver aktivert");
-        });
+    document.getElementById("storebokstaver").onclick = () => {
+      valg.store = true;
+      valg.sma = false;
+    };
 
-        document.getElementById("bothbtn").addEventListener("click", function() {
-        includeLowercase = true;
-        includeUppercase = true;
-        console.log("Begge bokstavtyper aktivert");
-        });
+    document.getElementById("beggebokstaver").onclick = () => {
+      valg.sma = true;
+      valg.store = true;
+    };
 
-        document.getElementById("numbtn").addEventListener("click", function() {
-        includeNumbers = true;
-        console.log("Tall inkludert");
-        });
+    // Tallvalg
+    document.getElementById("tallJa").onclick = () => valg.tall = true;
+    document.getElementById("tallNei").onclick = () => valg.tall = false;
 
-        document.getElementById("nonumbtn").addEventListener("click", function() {
-        includeNumbers = false;
-        console.log("Tall fjernet");
-        });
+    // Symbolvalg
+    document.getElementById("symbolJa").onclick = () => valg.symboler = true;
+    document.getElementById("symbolNei").onclick = () => valg.symboler = false;
 
-        document.getElementById("symbtn").addEventListener("click", function() {
-        includeSymbols = true;
-        console.log("Symboler inkludert");
-        });
+    // Funksjon for å lage passord
+    function lagPassord(lengde) {
+      let mulige = "";
 
-        document.getElementById("nosymbtn").addEventListener("click", function() {
-        includeSymbols = false;
-        console.log("Symboler fjernet");
-        });
+      if (valg.sma) mulige += tegnsett.sma;
+      if (valg.store) mulige += tegnsett.store;
+      if (valg.tall) mulige += tegnsett.tall;
+      if (valg.symboler) mulige += tegnsett.symboler;
 
-        function passwordgenerator(length, includeLowercase, includeUppercase, includeNumbers, includeSymbols) {
-            let tegn = ""
-            
-            if (includeLowercase) {
-            tegn += lowercase;
-            }
+      if (mulige === "") return "Velg minst ett tegnsett!";
 
-            if (includeUppercase) {
-            tegn += uppercase;
-            }
+      let resultat = "";
+      for (let i = 0; i < lengde; i++) {
+        let tilfeldigIndex = Math.floor(Math.random() * mulige.length);
+        resultat += mulige.charAt(tilfeldigIndex);
+      }
+      return resultat;
+    }
 
-            if (includeNumbers) {
-            tegn += numbers;
-            }
-
-            if (includeSymbols) {
-            tegn += symbols;
-            }
-
-
-            let passord = "";
-            for(let i = 0; i < length; i++) {
-                const random = Math.floor(Math.random()* tegn.length);
-                passord += tegn[random]
-            }
-            return passord;
-        }
-
-    document.getElementById("genbtn").addEventListener("click", function() {
-    const length = parseInt(document.getElementById("passordLength").value);
-    const generated = passwordgenerator(length, includeLowercase, includeUppercase, includeNumbers, includeSymbols);
-    document.getElementById("generatedPassword").innerHTML = generated;
-  });
-     </script>
+    document.getElementById("genererBtn").onclick = () => {
+      const lengde = parseInt(document.getElementById("passordLengde").value);
+      if (!lengde || lengde <= 0) {
+        document.getElementById("resultat").textContent = "Ugyldig lengde";
+        return;
+      }
+      document.getElementById("resultat").textContent = lagPassord(lengde);
+    };
+  </script>
 </body>
 </html>

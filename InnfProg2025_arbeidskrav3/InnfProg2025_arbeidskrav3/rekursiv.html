@@ -22,9 +22,30 @@
 
         function numberSelector() {
             // Din kode her
+            const listElement = document.getElementById("numberList");
+
+         if (listElement.firstElementChild?.textContent === "Tall vil skrives ut her.") {
+         listElement.innerHTML = "";
+         }
+
+         const tall = Math.floor(Math.random() * 9) + 1;
+
+   
+         const li = document.createElement("li");
+         li.textContent = tall;
+        listElement.appendChild(li);
+
+    
+        if (tall !== 4 && tall !== 7) {
+        numberSelector();
+        }
+        }
+
+
+       numberSelector();
 
             
-        }
+        
     </script>
 </body>
 </html>

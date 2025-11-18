@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #f4f4f4;
+            color: #232323;
+        }
+    </style>
+</head>
+<body>
+    <h1>Liste over kurs</h1>
+    <ul>
+        <li>Webutvikling</li>
+        <li>Programmering 1</li>
+        <li>Innføring i programmering</li>
+        <li>Prosjektledelse</li>
+        <li>Grafisk design</li>
+        <li>Utvikling av interaktive nettsider</li>
+        <li>UI Designprosjekt</li>
+        <li>Skisser og prototyper</li>
+        <li>Kommunikasjonsdesign</li>
+    </ul>
+
+    <script>
+        $('li:odd').css('background-color', '#d3d3d3').height(50);
+        $('li').on('click', function() {
+            alert($(this).text());
+        }  );
+    </script>
+</body>
+</html>
