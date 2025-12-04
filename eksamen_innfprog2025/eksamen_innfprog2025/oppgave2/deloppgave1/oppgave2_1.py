@@ -10,8 +10,7 @@ prw = [
     "iterasjon",
     "datastruktur",
     "kommentar"
-]
-
+] 
 #2
 def lungo(ordliste):
     if not ordliste:
