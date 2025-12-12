@@ -39,6 +39,7 @@
             //Denne variablen skal finne alder i listen
             const alder = personer.map(p=> p.alder);
             //Denne varbialen plusser sammen alder og deler på for finne gjennomsnitten
+            //reduce går gjennom alle tallene og plusser samen
             const gjennomsnitt = alder.reduce((sum, a) => sum +a) / alder.length;
             //console loger for å se om gjennomsnitt kommer fram
             console.log("gjennomsnittalderen er:", gjennomsnitt);
