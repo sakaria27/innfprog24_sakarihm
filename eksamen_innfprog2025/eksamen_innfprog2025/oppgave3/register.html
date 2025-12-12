@@ -36,20 +36,20 @@
     <script src="../oppgave1/action.js"></script>
     
     <script>
-        
-    const out = document.getElementById('output');
+        const out = document.getElementById('output');
     
-    document.getElementById('btn-all').onclick = () => out.innerHTML = listAllEmployees();
+        document.getElementById('btn-all').onclick = () => out.innerHTML = listAllEmployees();
     
-    document.getElementById('btn-undervisere').onclick = () => out.innerHTML = filterByPosition('Professor') + filterByPosition('Lektor');
+        document.getElementById('btn-undervisere').onclick = () => out.innerHTML = filterByPosition('Professor') + filterByPosition('Lektor');
     
-    document.getElementById('btn-admin').onclick = () => out.innerHTML = filterByPosition('Dekan') + filterByPosition('Rektor') + filterByPosition('Vaktmester');
+        document.getElementById('btn-admin').onclick = () => out.innerHTML = filterByPosition('Dekan') + filterByPosition('Rektor') + filterByPosition('Vaktmester');
     
-    document.querySelectorAll('.filter-role').forEach(b => b.onclick = () => out.innerHTML = filterByPosition(b.dataset.role));
+        document.querySelectorAll('.filter-role').forEach(b => b.onclick = () => out.innerHTML = filterByPosition(b.dataset.role));
     
-    out.innerHTML = listAllEmployees();
+        out.innerHTML = listAllEmployees();
 
-    showAllCourses();
+        showAllCourses();
+        
    </script>
     
     
