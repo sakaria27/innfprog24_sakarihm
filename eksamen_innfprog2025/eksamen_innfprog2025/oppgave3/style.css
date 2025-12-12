@@ -1,0 +1,82 @@
+/* Enkel og ren styling for ansatt-nettsiden */
+
+/* Generelt */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background: #f2f2f2;
+}
+
+/* Header */
+header {
+    margin-bottom: 20px;
+}
+
+header nav button,
+header section button {
+    margin: 5px;
+    padding: 8px 12px;
+    background: #1e88e5;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+header nav button:hover,
+header section button:hover {
+    background: #1565c0;
+}
+
+/* Tittel */
+h1 {
+    margin-bottom: 10px;
+}
+
+/* Output-grid (ansatte vises her) */
+#output {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+/* På større skjermer: 2 kolonner */
+@media (min-width: 600px) {
+    #output {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* På enda større skjermer: 3 kolonner */
+@media (min-width: 900px) {
+    #output {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Ansattkort */
+article {
+    background: white;
+    padding: 14px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}
+
+article h3 {
+    margin-top: 0;
+}
+
+article ul {
+    margin: 5px 0 0 18px;
+}
+
+#addForm{
+    display: flex;
+    gap: 10px;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+#addForm button{
+    width: auto;
+    padding: 5px 10px;
+}

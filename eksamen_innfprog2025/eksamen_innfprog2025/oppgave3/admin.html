@@ -1,31 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nb">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Høgskolen js</title>
+    <title>Høgskolen</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <button>Vis alle ansatte</button>
-            <button>Vis undervisere</button>
-            <button>Vis administrasjon</button>
-        </nav>
+    <h1>Legg til ansatte</h1>
+    <form id="addForm">
+        <label>
+            Fornavn:
+            <input type="text" id="Fornavn">
+        </label>
+        <label>
+            Etternavn:
+            <input type="text" id="Etternavn">
+        </label>
+        <label>
+            E:post:
+            <input type="email" id="email">
+        </label>
+        <label>
+            Kontor:
+            <input type="text" id="kontor">
+        </label>
+        <label> 
+            Stilling:
+            <select id="stilling" name="stilling"></select>
+        </label>
+        <label>
+            Kurs:
+            <input type="text" id="kurs">
+        </label>
+        <button type="submit">Legg til ansatte</button>
+    </form>
 
-        <section>
-            <span>Vis kun stilling:</span>
-            <button>Proffesor</button>
-            <button>Dekan</button>
-            <button>Rektor</button>
-            <button>Vaktmester</button>
-            <button>Lektor</button>
-        </section>
-    </header>
-    <main>
-        <h1>Ansatte</h1>
-        <script src="../oppgave1/register.js"></script>
+     <main>
+    <h1>Ansatte</h1>
+    <section id="output"></section>
+    
+   </main>
+    
+   <section id="kurs"></section>
         
-    </main>
+    <script src="../oppgave1/register.js"></script>
+    <script src="../oppgave1/action.js"></script>
+  
+    
+    
 </body>
 </html>
